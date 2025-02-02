@@ -1,9 +1,13 @@
 "use client"; 
+import { SidebarContext } from '@/src/contexts/sidebarContext';
+import { ThemeModeContext } from '@/src/contexts/themeMode';
+import { colors } from '@/src/styles/theme/colors';
 import React, { useContext } from 'react';
-import { SidebarContext } from '../contexts/sidebarContext';
 
 const Sidebar = () => {
   const { isSidebarOpen,closeSidebar } = useContext(SidebarContext);
+  const {theme}=useContext(ThemeModeContext)
+  const currentColor=colors[theme]
 
   return (
     <div>
@@ -20,10 +24,11 @@ const Sidebar = () => {
 
   {/* Sidebar */}
   <div
-    className="fixed inset-y-0 z-50 flex-shrink-0 w-64 mt-10 overflow-y-auto bg-white dark:bg-gray-800 lg:hidden transition-transform duration-150 ease-in-out"
+    className="fixed inset-y-0 z-50 flex-shrink-0 w-64 mt-10 overflow-y-auto dark:bg-gray-800 lg:hidden transition-transform duration-150 ease-in-out"
     style={{
       transform: isSidebarOpen ? "translateX(0)" : "-translateX(20rem)",
       opacity: isSidebarOpen ? 100 : 0,
+      backgroundColor:currentColor.background
     }}
   >
     {/* content */}

@@ -1,13 +1,19 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import Header1 from "../assets/images/header-min.png"; 
+import Header1 from "../../assets/images/header-min.png"; 
 import { Pagination } from 'swiper/modules';
+import { useContext } from 'react';
+import { ThemeModeContext } from '@/src/contexts/themeMode';
+import { colors } from '@/src/styles/theme/colors';
 
 export default function Header() {
+  const {theme}=useContext(ThemeModeContext)
+  const currentColor=colors[theme]
+  
   return (
     <>
-      <header className="bg-gray-200 flex h-96 justify-center items-center w-full text-sm md:text-base lg:text-lg xl:text-xl">
+      <header style={{backgroundColor:currentColor.background}} className="flex h-96 justify-center items-center w-full text-sm md:text-base lg:text-lg xl:text-xl">
         <Swiper
           spaceBetween={30}
           pagination={{

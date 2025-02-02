@@ -37,6 +37,6 @@ export const SidebarProvider: React.FC<SidebarProviderProps> = ({ children }) =>
     }),
     [isSidebarOpen]
   );
-
+ 
   return <SidebarContext.Provider value={value}>{children}</SidebarContext.Provider>;
 };
