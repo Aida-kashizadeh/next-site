@@ -28,15 +28,15 @@ interface HorizontalBarProps {
         )}
         {imagePosition === "left" && (
          <>
+            <div className="sm:w-1/2 text-center">
+            <p className="text-lg">{text}</p>
+          </div>
           <div className="w-full sm:w-1/2 flex justify-center items-center">
             <img
               src={imageSrc}
               alt="Image on the right"
               className="w-48 p-5 object-cover"
             />
-          </div>
-            <div className="sm:w-1/2 text-center">
-            <p className="text-lg">{text}</p>
           </div>
           </>
         )}
