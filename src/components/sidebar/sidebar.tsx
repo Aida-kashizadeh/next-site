@@ -3,6 +3,7 @@ import { SidebarContext } from '@/src/contexts/sidebarContext';
 import { ThemeModeContext } from '@/src/contexts/themeMode';
 import { colors } from '@/src/styles/theme/colors';
 import React, { useContext } from 'react';
+import SidebarContent from './sideBarContent';
 
 const Sidebar = () => {
   const { isSidebarOpen,closeSidebar } = useContext(SidebarContext);
@@ -31,7 +32,7 @@ const Sidebar = () => {
       backgroundColor:currentColor.background
     }}
   >
-    {/* content */}
+    <SidebarContent/>
   </div>
 </div>
   );

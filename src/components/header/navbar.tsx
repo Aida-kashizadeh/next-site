@@ -2,6 +2,7 @@ import { SidebarContext } from "@/src/contexts/sidebarContext";
 import { ThemeModeContext } from "@/src/contexts/themeMode";
 import { colors } from "@/src/styles/theme/colors";
 import { useContext } from "react";
+import Menu from "../menu";
 
 export default function Navbar (){
     const { isSidebarOpen,toggleSidebar } = useContext(SidebarContext);
@@ -15,7 +16,9 @@ export default function Navbar (){
         </button>
         
          <div className="pr-10 pt-1">logo</div>
-         <div className="hidden md:block pt-1">menu</div>
+         <div className="hidden md:block pt-1">
+          <Menu/>
+         </div>
          <div className="flex justify-evenly">
          <button className="md:block"
           onClick={()=>{
