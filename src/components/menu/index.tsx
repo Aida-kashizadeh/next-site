@@ -34,10 +34,10 @@ const Menu: React.FC = () => {
   ];
 
   return (
-    <div style={{ backgroundColor: currentColor.background,color:currentColor.text, padding: '10px' }}>
-      <ul>
+    <div style={{ color:currentColor.text, padding: '10px' ,height:'80px',paddingTop:'0px' }}>
+      <ul className='flex row'>
         {items.map((item, index) => (
-          <li key={index}>
+          <li key={index} className='ml-10'>
             <button onClick={() => toggleItem(index)} style={{ background: 'none', border: 'none', cursor: 'pointer',color:currentColor.text }}>
               {item.name}
             </button>

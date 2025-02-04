@@ -3,14 +3,18 @@ import { ThemeModeContext } from "@/src/contexts/themeMode";
 import { colors } from "@/src/styles/theme/colors";
 import { useContext } from "react";
 import Menu from "../menu";
+import useScroll from "@/src/hooks/useScroll";
 
 export default function Navbar (){
     const { isSidebarOpen,toggleSidebar } = useContext(SidebarContext);
     const { theme,toggleThemeMode } = useContext(ThemeModeContext);
-      const currentColor=colors[theme]
+    const currentColor=colors[theme]
+
+    const isScrolled=useScroll()
+    
     return(
         <>
-        <div style={{backgroundColor:currentColor.primary,color:currentColor.text}} className="flex bg-blue-950 h-10 text-xl justify-between">
+        <div style={{color:currentColor.text,backgroundColor:isScrolled?"#00000022":""}} className="flex h-10 text-xl justify-between fixed w-full z-50">
         <button onClick={toggleSidebar} style={{borderColor:currentColor.text}} className='md:hidden border-2 rounded-lg w-10 m-1'>
         {isSidebarOpen ? '-' : <i className="fa-solid fa-bars"></i>}
         </button>
