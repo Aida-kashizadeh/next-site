@@ -3,17 +3,19 @@
 export const colors = {
     light: {
       background: "#ffffff",
-      text: "#000000",
-      primary: "#62b6cb",
+      text: "#222222",
+      primary: "#12c5ed",
+      // primary:"#f39c12",
       secondary: "#73956f",
-      Warning:"#FFC857"
+      Warning:"#fcd812"
     },
     dark: {
-      background: "#2c3e50",
-      text: "#ecf0f1",
-      primary: "#1f2041",
-      secondary: "#73956f ",
-      Warning:"#FFC857"
+      background: "#1a2634",
+      text: "#ffffff",
+      primary: "#12c5ed",
+      // primary:"#f39c12",
+      secondary: "#2ecc71",
+      Warning:"#f39c12"
     },
   };
   

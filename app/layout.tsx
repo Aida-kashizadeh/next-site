@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import "./fontiran.css";
+// import Navbar from "@/src/components/header/navbar";
+import { ThemeProvider } from "@/src/contexts/themeMode";
+import { SidebarProvider } from "@/src/contexts/sidebarContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,11 +27,24 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="fa" dir="rtl">
+      <head>
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <ThemeProvider>
+          <SidebarProvider>
+            {/* <Navbar /> */}
+            <main className="min-h-screen">
+              {children}
+            </main>
+          </SidebarProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
